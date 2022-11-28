@@ -1040,6 +1040,9 @@ for X in $(cat "${CLEAR_PATH}" |sed 's/rm -rf//g' |sed 's/rm -fr//g' |sed 's/\r/
    rm -rf "${X}"
 done
 rename -v "s/^openwrt/${Gujian_Date}-${SOURCE}/" *
+#rename -v "s/^openwrt/${Gujian_Date}-${SOURCE}/" *
+mv *generic-squashfs-combined.img.gz OpenWrt-${matrixtarget}-${Gujian_Date}.img.gz
+mv *-generic-squashfs-combined-efi.img.gz OpenWrt-${matrixtarget}-${Gujian_Date}-efi.img.gz
 
 cd ${HOME_PATH}
 # 发布用的update_log.txt
